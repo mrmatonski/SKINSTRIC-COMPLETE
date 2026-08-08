@@ -5,9 +5,10 @@ import { useEffect } from "react";
 import gsap from "gsap";
 
 /**
- * Homepage matching skinstric-wandag: DISCOVER A.I. / TAKE TEST + GSAP hover.
- * Uses absolute positioning inside a full-viewport shell so layout still works
- * when a parent (e.g. app/template motion wrapper) creates a containing block.
+ * Homepage matching skinstric-ruddy: DISCOVER A.I. / TAKE TEST + GSAP hover.
+ * Desktop lower-left copy uses fixed + negative offsets that ONLY position
+ * correctly inside the md:fixed + translate centering parent (transform
+ * containing block). Do not remove that parent or the copy goes off-screen.
  */
 export default function HomeAnimations() {
   useEffect(() => {
@@ -114,13 +115,13 @@ export default function HomeAnimations() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-white">
-      <div className="relative mx-auto flex min-h-screen w-full max-w-[100vw] items-center justify-center max-sm:origin-center max-sm:scale-[0.75] max-sm:p-6">
+    <div className="max-sm:origin-center max-sm:scale-[0.75] max-sm:p-6">
+      <div className="flex h-[71dvh] flex-col items-center justify-center md:fixed md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
         {/* Mobile diamonds */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center lg:hidden">
+        <div className="absolute inset-0 flex items-center justify-center lg:hidden">
           <div className="absolute top-1/2 left-1/2 h-[350px] w-[350px] -translate-x-[52%] -translate-y-1/2 rotate-45 border border-dotted border-[#A0A4AB]" />
         </div>
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center lg:hidden">
+        <div className="absolute inset-0 flex items-center justify-center lg:hidden">
           <div className="absolute top-1/2 left-1/2 h-[420px] w-[420px] -translate-x-[52%] -translate-y-1/2 rotate-45 border border-dotted border-[#A0A4AB]" />
         </div>
 
@@ -132,12 +133,12 @@ export default function HomeAnimations() {
           </h1>
         </div>
 
-        <p className="absolute top-[calc(50%+7rem)] z-10 mt-4 block w-[30ch] text-center text-[16px] font-semibold text-[#1a1b1c83] lg:hidden">
+        <p className="text-muted-foreground z-10 mt-4 block w-[30ch] text-center text-[16px] font-semibold text-[#1a1b1c83] lg:hidden">
           Skinstric developed an A.I. that creates a highly-personalized routine
           tailored to what your skin needs.
         </p>
 
-        <div className="absolute top-[calc(50%+14rem)] z-10 mt-4 lg:hidden">
+        <div className="z-10 mt-4 lg:hidden">
           <Link href="/intro">
             <button
               type="button"
@@ -161,7 +162,12 @@ export default function HomeAnimations() {
           </Link>
         </div>
 
-        <div className="absolute bottom-8 left-8 hidden max-w-[28ch] space-y-3 text-sm font-normal text-[#1A1B1C] uppercase lg:block xl:left-12">
+        {/*
+          Desktop lower-left copy. Visible only at lg+.
+          Positioned relative to the transform containing block above
+          (md:fixed + -translate-*), not the viewport — same as ruddy.
+        */}
+        <div className="fixed bottom-[calc(-7vh)] left-[calc(-20vw)] hidden space-y-3 text-sm font-normal text-[#1A1B1C] uppercase xl:left-[calc(-27vw)] 2xl:left-[calc(-31vw)] [@media(width>=1920px)]:left-[calc(-33vw)] lg:block">
           <p>
             Skinstric developed an A.I. that creates a
             <br />
@@ -174,14 +180,14 @@ export default function HomeAnimations() {
         {/* Left — DISCOVER A.I. */}
         <div
           id="left-section"
-          className="absolute top-1/2 left-0 z-20 hidden h-[500px] w-[500px] -translate-x-[55%] -translate-y-1/2 opacity-100 transition-opacity duration-500 ease-in-out xl:-translate-x-[50%] lg:block"
+          className="fixed top-1/2 left-[calc(-53vw)] hidden h-[500px] w-[500px] -translate-y-1/2 opacity-100 transition-opacity duration-500 ease-in-out xl:left-[calc(-50vw)] lg:block"
         >
           <div className="relative h-full w-full">
-            <div className="absolute inset-0 h-full w-full rotate-45 border border-dotted border-[#A0A4AB]" />
+            <div className="fixed inset-0 h-full w-full rotate-45 border border-dotted border-[#A0A4AB]" />
             <button
               id="discover-button"
               type="button"
-              className="group absolute top-1/2 right-0 z-30 inline-flex h-9 translate-x-1/5 -translate-y-1/2 cursor-pointer items-center justify-center gap-4 rounded-md px-3 py-1 text-sm font-normal whitespace-nowrap text-[#1A1B1C] transition-colors xl:translate-x-1/6 [@media(width>=1920px)]:translate-x-1/20"
+              className="group absolute top-1/2 right-0 inline-flex h-9 translate-x-1/5 -translate-y-1/2 cursor-pointer items-center justify-center gap-4 rounded-md px-3 py-1 text-sm font-normal whitespace-nowrap text-[#1A1B1C] transition-colors xl:translate-x-1/6 [@media(width>=1920px)]:translate-x-1/20"
             >
               <div className="h-[30px] w-[30px] rotate-45 cursor-pointer border border-solid border-black duration-300 group-hover:scale-110" />
               <span className="absolute top-[8px] left-[18px] scale-[0.9] rotate-180 duration-300 group-hover:scale-105">
@@ -195,7 +201,7 @@ export default function HomeAnimations() {
         {/* Right — TAKE TEST */}
         <div
           id="right-section"
-          className="absolute top-1/2 right-0 z-20 hidden h-[500px] w-[500px] translate-x-[55%] -translate-y-1/2 opacity-100 transition-opacity duration-500 ease-in-out xl:translate-x-[50%] lg:block"
+          className="fixed top-1/2 right-[calc(-53vw)] hidden h-[500px] w-[500px] -translate-y-1/2 opacity-100 transition-opacity duration-500 ease-in-out xl:right-[calc(-50vw)] lg:block"
         >
           <div className="relative h-full w-full">
             <div className="absolute inset-0 h-full w-full rotate-45 border border-dotted border-[#A0A4AB]" />
@@ -203,7 +209,7 @@ export default function HomeAnimations() {
               <button
                 id="take-test-button"
                 type="button"
-                className="group absolute top-1/2 left-0 z-30 inline-flex h-9 -translate-x-1/5 -translate-y-1/2 cursor-pointer items-center justify-center gap-4 rounded-md px-3 py-1 text-sm font-normal whitespace-nowrap text-[#1A1B1C] transition-colors xl:-translate-x-1/6 [@media(width>=1920px)]:-translate-x-1/20"
+                className="group absolute top-1/2 left-0 inline-flex h-9 -translate-x-1/5 -translate-y-1/2 cursor-pointer items-center justify-center gap-4 rounded-md px-3 py-1 text-sm font-normal whitespace-nowrap text-[#1A1B1C] transition-colors xl:-translate-x-1/6 [@media(width>=1920px)]:-translate-x-1/20"
               >
                 TAKE TEST
                 <div className="h-[30px] w-[30px] rotate-45 border border-solid border-black duration-300 group-hover:scale-110" />

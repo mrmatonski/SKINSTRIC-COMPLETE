@@ -24,7 +24,7 @@ function DiamondNavContent({
     return (
       <div>
         <div
-          className={`relative flex h-12 w-12 scale-[1] items-center justify-center rotate-45 border sm:hidden ${border}`}
+          className={`relative flex h-12 w-12 min-h-12 min-w-12 scale-[1] items-center justify-center rotate-45 border sm:hidden ${border}`}
         >
           <span
             className={`rotate-[-45deg] text-xs font-semibold sm:hidden ${text}`}
@@ -54,7 +54,7 @@ function DiamondNavContent({
   return (
     <div>
       <div
-        className={`relative flex h-12 w-12 scale-[1] items-center justify-center rotate-45 border sm:hidden ${border}`}
+        className={`relative flex h-12 w-12 min-h-12 min-w-12 scale-[1] items-center justify-center rotate-45 border sm:hidden ${border}`}
       >
         <span
           className={`rotate-[-45deg] text-xs font-semibold sm:hidden ${text}`}
@@ -139,7 +139,7 @@ export function FooterNav({ children }: { children: ReactNode }) {
   const items = Children.toArray(children).filter(Boolean);
 
   return (
-    <div className="absolute bottom-38.5 flex w-full justify-between px-13 md:bottom-8 md:px-9">
+    <div className="absolute bottom-8 left-0 right-0 z-30 flex w-full justify-between px-6 sm:bottom-38.5 sm:px-13 md:bottom-8 md:px-9">
       <div>{items[0] ?? null}</div>
       {items.length === 2 ? <div>{items[1]}</div> : null}
       {items.length >= 3 ? (

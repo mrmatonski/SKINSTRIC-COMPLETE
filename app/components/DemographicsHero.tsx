@@ -136,14 +136,14 @@ export default function DemographicsHero() {
   }
 
   return (
-    <div className="flex h-screen flex-col md:mt-5 md:h-[90vh]">
+    <div className="flex h-[100dvh] flex-col overflow-hidden md:mt-5 md:h-[90vh]">
       <main className="w-full flex-1 overflow-auto bg-white md:overflow-hidden">
-        <div className="mx-5 flex max-w-full flex-col px-4 md:h-full md:px-auto">
+        <div className="box-border flex w-full max-w-full flex-col px-4 md:h-full md:px-5">
           <div className="mb-4 ml-4 text-start md:mb-10 md:ml-0">
             <h2 className="mb-1 text-base leading-[24px] font-semibold md:text-base">
               A.I. ANALYSIS
             </h2>
-            <h3 className="text-4xl leading-[64px] font-normal tracking-tighter md:text-[72px]">
+            <h3 className="text-3xl leading-[40px] font-normal tracking-tighter sm:text-4xl sm:leading-[64px] md:text-[72px]">
               DEMOGRAPHICS
             </h3>
             <h4 className="mt-2 text-sm leading-[24px]">
@@ -152,13 +152,13 @@ export default function DemographicsHero() {
           </div>
 
           {!data && (
-            <div className="flex flex-col items-center justify-center px-4 py-20 text-center">
-              <p className="mb-4 text-xl">
+            <div className="mx-auto flex w-full max-w-[min(28rem,100%)] flex-col items-center justify-center py-16 text-center sm:py-20">
+              <p className="mb-4 text-balance text-base leading-snug text-[#1A1B1C] sm:text-xl">
                 No analysis data found. Please upload an image first.
               </p>
               <Link
                 href="/analysis"
-                className="rounded bg-black px-6 py-2 text-white hover:bg-gray-800"
+                className="inline-block max-w-full rounded bg-[#1A1B1C] px-4 py-3 text-center text-sm font-semibold leading-snug whitespace-normal !text-[#FCFCFC] hover:bg-gray-800 sm:px-6 sm:text-base"
               >
                 Go to Upload Page or take a Picture with your device
               </Link>
@@ -306,7 +306,7 @@ export default function DemographicsHero() {
             </div>
           )}
 
-          <div className="sticky bottom-40 mb-8 bg-white pt-4 pb-6 md:static md:bottom-0 md:mb-16 md:pt-[37px]">
+          <div className="sticky bottom-4 mb-4 bg-white pt-4 pb-6 sm:bottom-40 sm:mb-8 md:static md:bottom-0 md:mb-16 md:pt-[37px]">
             <div className="mx-auto flex max-w-full justify-between px-4 md:px-0">
               <BackButton href="/results" />
               <ProceedButton href="/" label="HOME" mobileLabel="HOME" />

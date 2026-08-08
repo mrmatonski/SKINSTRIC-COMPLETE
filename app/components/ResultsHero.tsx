@@ -12,7 +12,7 @@ export default function ResultsHero() {
   const [hover, setHover] = useState<HoverKey>(null);
 
   return (
-    <div className="relative min-h-[90vh] bg-white">
+    <div className="relative min-h-[90vh] overflow-hidden bg-white">
       <div className="absolute top-16 left-9 z-10 text-left">
         <p className="text-xs font-semibold tracking-wide">A.I. ANALYSIS</p>
         <p className="mt-2 text-sm leading-snug text-gray-500">
@@ -22,7 +22,8 @@ export default function ResultsHero() {
         </p>
       </div>
 
-      <div className="relative flex min-h-[78vh] items-center justify-center pt-8 md:pt-0">
+      <div className="relative flex min-h-[78vh] items-center justify-center overflow-hidden pt-8 md:pt-0">
+        <div className="relative flex h-full w-full max-w-[100vw] items-center justify-center max-sm:origin-center max-sm:scale-[0.52] sm:max-md:scale-[0.68]">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div
             className={`absolute transition-all duration-400 ${
@@ -119,6 +120,7 @@ export default function ResultsHero() {
               <span className="-rotate-45 transform">Weather</span>
             </button>
           </div>
+        </div>
         </div>
       </div>
 

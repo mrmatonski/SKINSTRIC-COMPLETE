@@ -95,45 +95,45 @@ export default function AnalysisHero() {
   }
 
   return (
-    <div className="relative min-h-[90vh] overflow-hidden bg-white">
+    <div className="relative min-h-[90vh] overflow-x-hidden overflow-y-auto bg-white md:overflow-hidden">
       <div className="absolute top-16 left-9 z-20 text-left">
         <p className="text-xs font-semibold tracking-wide">TO START ANALYSIS</p>
       </div>
 
       <div
-        className={`relative mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col items-center justify-center px-4 pt-6 md:block md:h-[72vh] md:pt-0 ${
+        className={`relative mx-auto flex min-h-[70vh] w-full max-w-6xl flex-col items-center justify-center gap-1 px-4 pt-2 pb-20 md:block md:h-[72vh] md:gap-0 md:pt-0 md:pb-0 ${
           showModal ? "pointer-events-none opacity-50" : ""
         }`}
       >
         <div className="relative -translate-y-[1%] flex flex-col items-center justify-center md:absolute md:left-[55%] md:-translate-x-full md:-translate-y-[0%] lg:left-[50%] xl:left-[40%]">
-          <div className="relative h-[270px] w-[270px] md:h-[482px] md:w-[482px]">
+          <div className="relative h-[220px] w-[220px] sm:h-[270px] sm:w-[270px] md:h-[482px] md:w-[482px]">
             <Image
               src="/images/res-diamond-large.png"
               alt=""
               width={482}
               height={482}
               priority
-              className="absolute top-1/2 left-1/2 h-[270px] w-[270px] -translate-x-[50%] -translate-y-1/2 rotate-200 animate-spin-slow object-contain md:h-[482px] md:w-[482px]"
+              className="absolute top-1/2 left-1/2 h-[220px] w-[220px] -translate-x-[50%] -translate-y-1/2 rotate-200 animate-spin-slow object-contain sm:h-[270px] sm:w-[270px] md:h-[482px] md:w-[482px]"
             />
             <Image
               src="/images/res-diamond-medium.png"
               alt=""
               width={444}
               height={444}
-              className="absolute top-1/2 left-1/2 h-[230px] w-[230px] -translate-x-[50%] -translate-y-1/2 rotate-190 animate-spin-slower object-contain md:h-[444.34px] md:w-[444.34px]"
+              className="absolute top-1/2 left-1/2 h-[190px] w-[190px] -translate-x-[50%] -translate-y-1/2 rotate-190 animate-spin-slower object-contain sm:h-[230px] sm:w-[230px] md:h-[444.34px] md:w-[444.34px]"
             />
             <Image
               src="/images/res-diamond-small.png"
               alt=""
               width={405}
               height={405}
-              className="absolute top-1/2 left-1/2 h-[190px] w-[190px] -translate-x-[50%] -translate-y-1/2 animate-spin-slowest object-contain md:h-[405.18px] md:w-[405.18px]"
+              className="absolute top-1/2 left-1/2 h-[160px] w-[160px] -translate-x-[50%] -translate-y-1/2 animate-spin-slowest object-contain sm:h-[190px] sm:w-[190px] md:h-[405.18px] md:w-[405.18px]"
             />
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
               <button
                 type="button"
                 onClick={() => setShowModal(true)}
-                className="absolute h-[100px] w-[100px] cursor-pointer duration-700 ease-in-out hover:scale-108 md:h-[136px] md:w-[136px]"
+                className="absolute h-[88px] w-[88px] cursor-pointer duration-700 ease-in-out hover:scale-108 sm:h-[100px] sm:w-[100px] md:h-[136px] md:w-[136px]"
                 aria-label="Allow A.I. to scan your face"
               >
                 <Image
@@ -147,12 +147,10 @@ export default function AnalysisHero() {
             </div>
           </div>
 
-          <div className="absolute right-[90px] bottom-[1%] translate-y-[-20px] md:top-[30.9%] md:right-[-12px]">
-            <div className="flex items-center gap-2">
-              <div className="text-left text-sm leading-tight font-semibold uppercase">
-                <p>ALLOW A.I.</p>
-                <p>TO SCAN YOUR FACE</p>
-              </div>
+          <div className="mt-3 text-center md:absolute md:right-[-12px] md:top-[30.9%] md:mt-0 md:translate-y-0 md:text-left">
+            <div className="text-sm leading-tight font-semibold uppercase">
+              <p>ALLOW A.I.</p>
+              <p>TO SCAN YOUR FACE</p>
             </div>
           </div>
           <Image
@@ -165,11 +163,11 @@ export default function AnalysisHero() {
         </div>
 
         <div
-          className={`relative mt-12 flex -translate-y-[10%] flex-col items-center justify-center transition-opacity duration-300 md:absolute md:left-[45%] md:mt-0 md:-translate-y-[0%] lg:left-[50%] xl:left-[55%] ${
+          className={`relative mt-4 flex flex-col items-center justify-center transition-opacity duration-300 md:absolute md:left-[45%] md:mt-0 md:-translate-y-[0%] lg:left-[50%] xl:left-[55%] ${
             analyzing ? "opacity-40" : ""
           }`}
         >
-          <div className="absolute top-[-75px] right-7 transition-opacity duration-300 md:top-[-50px] md:right-8">
+          <div className="absolute top-[-75px] right-7 hidden transition-opacity duration-300 md:top-[-50px] md:right-8 md:block">
             <p className="mb-1 text-xs font-semibold tracking-wide text-gray-500 uppercase">
               Preview
             </p>
@@ -189,13 +187,13 @@ export default function AnalysisHero() {
             </div>
           </div>
 
-          <div className="relative h-[270px] w-[270px] md:h-[482px] md:w-[482px]">
+          <div className="relative h-[220px] w-[220px] sm:h-[270px] sm:w-[270px] md:h-[482px] md:w-[482px]">
             <Image
               src="/images/res-diamond-large.png"
               alt=""
               width={482}
               height={482}
-              className={`absolute top-1/2 left-1/2 h-[270px] w-[270px] -translate-x-[50%] -translate-y-1/2 rotate-205 object-contain md:h-[482px] md:w-[482px] ${
+              className={`absolute top-1/2 left-1/2 h-[220px] w-[220px] -translate-x-[50%] -translate-y-1/2 rotate-205 object-contain sm:h-[270px] sm:w-[270px] md:h-[482px] md:w-[482px] ${
                 analyzing ? "animate-spin-load" : "animate-spin-slow"
               }`}
             />
@@ -204,7 +202,7 @@ export default function AnalysisHero() {
               alt=""
               width={444}
               height={444}
-              className={`absolute top-1/2 left-1/2 h-[230px] w-[230px] -translate-x-[50%] -translate-y-1/2 rotate-195 object-contain md:h-[444.34px] md:w-[444.34px] ${
+              className={`absolute top-1/2 left-1/2 h-[190px] w-[190px] -translate-x-[50%] -translate-y-1/2 rotate-195 object-contain sm:h-[230px] sm:w-[230px] md:h-[444.34px] md:w-[444.34px] ${
                 analyzing ? "animate-spin-loader" : "animate-spin-slower"
               }`}
             />
@@ -213,7 +211,7 @@ export default function AnalysisHero() {
               alt=""
               width={405}
               height={405}
-              className={`absolute top-1/2 left-1/2 h-[190px] w-[190px] -translate-x-[50%] -translate-y-1/2 object-contain md:h-[405.18px] md:w-[405.18px] ${
+              className={`absolute top-1/2 left-1/2 h-[160px] w-[160px] -translate-x-[50%] -translate-y-1/2 object-contain sm:h-[190px] sm:w-[190px] md:h-[405.18px] md:w-[405.18px] ${
                 analyzing ? "animate-spin-loadest" : "animate-spin-slowest"
               }`}
             />
@@ -222,7 +220,7 @@ export default function AnalysisHero() {
                 type="button"
                 onClick={() => fileRef.current?.click()}
                 disabled={analyzing}
-                className="absolute h-[100px] w-[100px] cursor-pointer duration-700 ease-in-out hover:scale-108 disabled:cursor-not-allowed md:h-[136px] md:w-[136px]"
+                className="absolute h-[88px] w-[88px] cursor-pointer duration-700 ease-in-out hover:scale-108 disabled:cursor-not-allowed sm:h-[100px] sm:w-[100px] md:h-[136px] md:w-[136px]"
                 aria-label="Allow A.I. access gallery"
               >
                 <Image
@@ -243,8 +241,8 @@ export default function AnalysisHero() {
             </div>
           </div>
 
-          <div className="absolute top-[75%] translate-y-[-10px] md:top-[70%] md:left-[17px]">
-            <div className="text-right text-sm leading-tight font-semibold uppercase md:text-left">
+          <div className="mt-3 text-center md:absolute md:top-[70%] md:left-[17px] md:mt-0 md:text-left">
+            <div className="text-sm leading-tight font-semibold uppercase">
               <p>ALLOW A.I.</p>
               <p>ACCESS GALLERY</p>
             </div>

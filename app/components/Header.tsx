@@ -19,8 +19,8 @@ export default function Header() {
   const onCamera = pathname.startsWith("/camera/capture");
 
   return (
-    <div className="relative z-[1000] mb-3 flex h-[64px] w-full flex-row justify-between py-3">
-      <div className="flex scale-75 flex-row items-center justify-center pt-1">
+    <div className="relative z-[1000] mb-3 flex h-[64px] w-full flex-row items-center justify-between overflow-visible py-3">
+      <div className="flex min-w-0 scale-75 flex-row items-center justify-center pt-1 origin-left">
         <Link
           href="/"
           className={`z-1000 mr-2 inline-flex h-9 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm leading-[16px] font-semibold whitespace-nowrap transition-colors line-clamp-4 ${
@@ -53,7 +53,7 @@ export default function Header() {
       </div>
       <button
         type="button"
-        className="mx-4 inline-flex h-9 scale-[0.8] items-center justify-center gap-2 bg-[#1A1B1C] px-4 py-2 text-[10px] leading-[16px] font-semibold whitespace-nowrap text-[#FCFCFC] shadow transition-colors hover:bg-[#1A1B1C]/90"
+        className="mr-2 inline-flex h-8 shrink-0 items-center justify-center bg-[#1A1B1C] px-2.5 py-2 text-[9px] leading-[16px] font-semibold whitespace-nowrap text-[#FCFCFC] shadow transition-colors hover:bg-[#1A1B1C]/90 sm:mx-4 sm:h-9 sm:scale-[0.8] sm:px-4 sm:text-[10px]"
       >
         ENTER CODE
       </button>

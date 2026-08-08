@@ -144,7 +144,7 @@ export default function CameraCapturePage() {
             muted
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute right-8 bottom-24 z-20 flex items-center gap-3">
+          <div className="absolute right-4 bottom-36 z-20 flex items-center gap-3 sm:right-8 sm:bottom-24">
             <span className="hidden text-sm leading-[14px] font-normal text-[#FCFCFC] sm:block">
               TAKE PICTURE
             </span>
@@ -163,11 +163,11 @@ export default function CameraCapturePage() {
               />
             </button>
           </div>
-          <div className="absolute bottom-40 left-1/2 z-20 w-full max-w-lg -translate-x-1/2 px-4 text-center">
-            <p className="mb-2 text-sm leading-6 font-normal text-[#FCFCFC]">
+          <div className="absolute bottom-28 left-1/2 z-20 w-full max-w-lg -translate-x-1/2 px-4 text-center sm:bottom-40">
+            <p className="mb-2 text-[11px] leading-5 font-normal text-[#FCFCFC] sm:text-sm sm:leading-6">
               TO GET BETTER RESULTS MAKE SURE TO HAVE
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-xs text-[#FCFCFC] uppercase">
+            <div className="flex flex-col items-center gap-2 text-[10px] text-[#FCFCFC] uppercase sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 sm:text-xs">
               <span>◇ NEUTRAL EXPRESSION</span>
               <span>◇ FRONTAL POSE</span>
               <span>◇ ADEQUATE LIGHTING</span>

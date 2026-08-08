@@ -148,7 +148,7 @@ export default function IntroHero() {
   const busy = state.phase !== "idle" || isPending;
 
   return (
-    <div className="flex min-h-[90vh] flex-col items-center justify-center bg-white text-center">
+    <div className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-white text-center">
       <div className="absolute top-16 left-9 text-left">
         <p className="text-xs font-semibold">TO START ANALYSIS</p>
       </div>
@@ -183,7 +183,7 @@ export default function IntroHero() {
               autoFocus
               placeholder="Introduce Yourself"
               aria-label="Your name"
-              className="z-10 w-[372px] appearance-none border-b border-black bg-transparent pt-1 text-center text-5xl leading-[64px] font-normal tracking-[-0.07em] text-[#1A1B1C] focus:outline-none sm:w-[432px] sm:text-6xl"
+              className="z-10 w-full max-w-[min(372px,calc(100vw-2.5rem))] appearance-none border-b border-black bg-transparent pt-1 text-center text-4xl leading-[48px] font-normal tracking-[-0.07em] text-[#1A1B1C] focus:outline-none sm:max-w-none sm:w-[432px] sm:text-6xl sm:leading-[64px]"
             />
             <button type="submit" className="sr-only">
               Submit
@@ -208,7 +208,7 @@ export default function IntroHero() {
               placeholder="your city name"
               defaultValue=""
               aria-label="Your city"
-              className="z-10 w-[372px] appearance-none border-b border-black bg-transparent pt-1 text-center text-5xl leading-[64px] font-normal tracking-[-0.07em] text-[#1A1B1C] focus:outline-none sm:w-[432px] sm:text-6xl"
+              className="z-10 w-full max-w-[min(372px,calc(100vw-2.5rem))] appearance-none border-b border-black bg-transparent pt-1 text-center text-4xl leading-[48px] font-normal tracking-[-0.07em] text-[#1A1B1C] focus:outline-none sm:max-w-none sm:w-[432px] sm:text-6xl sm:leading-[64px]"
             />
             <button type="submit" className="sr-only">
               Submit
@@ -231,7 +231,7 @@ export default function IntroHero() {
           width={762}
           height={762}
           priority
-          className="absolute top-1/2 left-1/2 h-[480px] w-[480px] -translate-x-[50%] -translate-y-1/2 rotate-190 animate-spin-slow md:h-[762px] md:w-[762px]"
+          className="absolute top-1/2 left-1/2 h-[360px] w-[360px] -translate-x-[50%] -translate-y-1/2 rotate-190 animate-spin-slow sm:h-[480px] sm:w-[480px] md:h-[762px] md:w-[762px]"
         />
         <Image
           src="/images/diamond-medium.png"
@@ -239,7 +239,7 @@ export default function IntroHero() {
           width={682}
           height={682}
           priority
-          className="absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-[50%] -translate-y-1/2 rotate-185 animate-spin-slower md:h-[682px] md:w-[682px]"
+          className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-[50%] -translate-y-1/2 rotate-185 animate-spin-slower sm:h-[400px] sm:w-[400px] md:h-[682px] md:w-[682px]"
         />
         <Image
           src="/images/diamond-small.png"
@@ -247,7 +247,7 @@ export default function IntroHero() {
           width={602}
           height={602}
           priority
-          className="absolute top-1/2 left-1/2 h-[320px] w-[320px] -translate-x-[50%] -translate-y-1/2 animate-spin-slowest md:h-[602px] md:w-[602px]"
+          className="absolute top-1/2 left-1/2 h-[240px] w-[240px] -translate-x-[50%] -translate-y-1/2 animate-spin-slowest sm:h-[320px] sm:w-[320px] md:h-[602px] md:w-[602px]"
         />
       </div>
 

@@ -16,7 +16,7 @@ export default function CameraSetupPage() {
   }, [router]);
 
   return (
-    <div className="relative flex min-h-[90vh] flex-col items-center justify-center bg-white">
+    <div className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-white">
       <div className="relative flex h-[320px] w-[320px] items-center justify-center md:h-[420px] md:w-[420px]">
         <Image
           src="/images/res-diamond-large.png"
@@ -52,11 +52,11 @@ export default function CameraSetupPage() {
         <LoadingDots label="SETTING UP CAMERA ..." />
       </div>
 
-      <div className="absolute bottom-16 text-center">
-        <p className="mb-3 text-xs font-semibold tracking-wide text-gray-500 uppercase">
+      <div className="absolute bottom-10 left-0 right-0 px-4 text-center sm:bottom-16">
+        <p className="mb-3 text-[10px] font-semibold tracking-wide text-gray-500 uppercase sm:text-xs">
           TO GET BETTER RESULTS MAKE SURE TO HAVE
         </p>
-        <div className="flex flex-wrap justify-center gap-6 text-xs font-semibold uppercase">
+        <div className="flex flex-col items-center gap-2 text-[10px] font-semibold uppercase sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6 sm:text-xs">
           <span>◇ NEUTRAL EXPRESSION</span>
           <span>◇ FRONTAL POSE</span>
           <span>◇ ADEQUATE LIGHTING</span>
